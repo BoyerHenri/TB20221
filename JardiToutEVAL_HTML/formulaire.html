@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarditou</title>
+</head>
+<body>
+	</header>
+		<img src="src/img/jarditou_logo.jpg" alt="Logo JARDITOU" title="Logo JARDITOU" height="80" >
+		<p> La qualité depuis 70 ans </p>
+		<nav class="menu">
+		<ul>
+			<li><a href="index.html">Accueil</a></li>
+			<li><a href="tableau.html">Tableau</a></li>
+			<li><a href="formulaire.html">Contact</a></li>
+		</ul>
+		</nav>
+	<img src="src/img/promotion.jpg" alt="Promotion lames de terrasse" title="Promotion lames de terrasse">
+	</header>
+	<!-- --- -->
+	<h1>Contact</h1>
+	<hr>
+	<!-- --- -->
+	<form  action="http://bienvu.net/script.php" method="GET">
+		* ces zones sont obligatoires
+		<fieldset>
+			<legend>Vos coordonnées</legend>
+			<label for="nom">Nom *:</label><input type="text" name="nom" id="nom"><br>
+			<label for="prenom">Prénom *</label><input type="text" name="prenom" id="prenom"><br>
+			<!-- SEXE -->
+			<br>
+			Sexe * :
+			<input type="radio" name="sexe" value="Homme" checked> Homme
+			<input type="radio" name="sexe" value="Femme"> Femme
+			<br>
+			<br>
+			<label for="date">Date de naissance:</label><input type="date" name="ddn" id="date"><br>
+			<label for="cp">Code postal *:</label><input type="number" name="cp" id="cp"><br>
+			<label for="adresse">Adresse :</label><input type="text" name="adresse" id="adresse"><br>
+			<label for="ville">Ville :</label><input type="text" name="ville" id="ville"><br>
+			<label for="mail">E mail *:</label><input type="text" name="mail" id="mail" value="Dave@LOPER.fr"><br>
+		</fieldset>
+		<br>
+		<br>
+		<fieldset>
+			<legend>Votre demande</legend>
+			<label for="demande"></label>    
+			Sujet *
+			<select id="demande">            
+				<option value="Null">Veuillez selectionner un sujet</option>
+				<option value="Mcmds">Mes commandes</option>
+				<option value="Question">Question sur un produit</option>
+				<option value="Rclm">Réclamation</option>
+				<option value="Autre">Autre</option>
+			</select>
+			<br>
+			Votre question *
+			<textarea name="commentaire" rows="10" cols="50"></textarea>
+			<br>
+			<input type="checkbox" name="ok" value="ok" > J'accepte le traitement informatique de ce formulaire. *
+		</fieldset>
+		<br>
+		<input type="submit" value="Envoyer"> 
+		<input type="reset" value="Annuler">
+		<!-- --- -->
+		<hr>
+		<footer>
+		<nav class="menu">
+			<ul>
+				<li><a>Mentions légales</a></li>
+				<li><a>Horaires</a></li>
+				<li><a>Plan du site</a></li>
+			</ul>
+		</nav>
+	</footer>
+  </body>
+</html>
