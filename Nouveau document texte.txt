@@ -1,0 +1,1 @@
+git config --global user.name "ton pseudo" git config --global user.password "ton mdp"
