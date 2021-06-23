@@ -1,0 +1,101 @@
+/* Init Responsive */
+html {
+    font-size: 100%;
+}
+/* Affichage pas mobile */
+/*
+@media screen and (max-width: 576px) { 
+    h1 
+    { 
+        font-size : 4em; 
+    } 
+}  
+@media screen and (max-width: 768px) { 
+    h1
+    { 
+        font-size : 2em; 
+    } 
+}  
+@media screen and (max-width: 992px) { 
+    h1
+    { 
+        font-size : 1em; 
+    } 
+} 
+*/
+
+img {
+     max-width: 100%;
+     height: auto;
+}   
+
+.Bann-containner{
+    display: flex;
+    justify-content: space-between;
+    list-style-type : none;
+}
+
+.Bann-Item{
+    display: block;
+    margin-right: 10rem;
+    max-width: 30rem;
+}
+
+.Promo-containner {
+    display: flex;
+    justify-content: center; 
+}
+
+.MainBann {
+    justify-content: center; 
+}
+
+.BodyContain{
+    display: flex;
+    flex-direction: row;
+    list-style-type : none;
+    justify-content: center;
+}
+.RightC {
+    display: flex;
+    background-color: rgb(115,115,115);
+    padding-left: 20px;
+    position: relative;
+    margin: 16px 1px;
+    width: 20%;    
+    border:1px transparent;
+    justify-content: center;
+}
+a {
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+ul {
+    display: flex;
+    list-style-type : none;
+}
+.NavMenu {
+    display: flex;
+    background-color: black;
+    justify-content: space-evenly;
+    list-style-type : none;
+}
+
+/*Affichage mobile*/
+@media screen and (max-width: 768px) { 
+    body {
+        font-size: 0.65rem;
+    } 
+    /*h2 {
+        font-size: 1rem;
+    } */
+    .NavMenu {
+        display: block;
+        background-color: black;
+        list-style-type : none;
+    }
+    .RightC 
+    {
+        display: none;
+    }
+}
