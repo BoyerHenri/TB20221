@@ -4,92 +4,96 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="assets/css/MainStyle.css">
+	<link rel="stylesheet" href="assets/css/styleCorrections.css">
 	<title>Tableau Jarditou</title>
 </head>
 <body>
-	<!-- Haut de page -->
-	<ul class="Bann-containner">
-		<li class="Bann-Item"><img src="src/img/jarditou_logo.jpg" alt="Logo JARDITOU" title="Logo JARDITOU" height="80"></li>
-		<li class="Bann-Item"><h1>Tout le jardin</h1></li>
-	</ul>
-	<nav class="menu">
+	<header>
+		<!-- Haut de page -->
+		<ul class="Bann-containner">
+			<li class="Bann-Item"><img src="src/img/jarditou_logo.jpg" alt="Logo JARDITOU" title="Logo JARDITOU" height="80"></li>
+			<li class="Bann-Item" style="text-align:center;"><h2><br><br>Tout le jardin</h2></li>
+		</ul>
+		<nav class="menu">
 		<ul class="NavMenu">
 			<li><a href="index.html">Accueil</a></li>
 			<li><a href="tableau.html">Tableau</a></li>
 			<li><a href="formulaire.html">Contact</a></li>
 		</ul>
-	</nav>
-	<div class="MainBann">
-		<img src="src/img/promotion.jpg" alt="Promotion lames de terrasse" title="Promotion lames de terrasse" >
-	</div>
+		</nav>
+		<div class="Promo-containner">
+			<div class="MainBann">
+			<img src="src/img/promotion.jpg" alt="Promotion lames de terrasse" title="Promotion lames de terrasse">
+			</div>
+		</div>
 	</header>
 	<!-- Contenu -->
-	<ul class="BodyContain">
-		<li class="BodyContain-item">
+	<div class="BodyContain">
+		<section class="BodyContain-item">			
 			<h1>Tableau</h1>
 			<hr>
-			<table>
-				<thead>
-					<tr>
-						<h3>
-							<th>Photo</th>
-							<th>ID</th>
-							<th>Catégorie</th>
-							<th>Libellé</th>
-							<th>Prix</th>
-							<th>Couleur</th>
-						</h3>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><img src="src/img/7.jpg" alt="Barbecues" title="Barbecues" height="100" ></td>
-						<td>7</td>
-						<td>Barbecues</td>
-						<td>Aramis</td>
-						<td>110.00€</td>
-						<td>Brun</td>
-					</tr>
-					<tr>
-						<td><img src="src/img/8.jpg" alt="Barbecues" title="Barbecues" height="100" ></td>
-						<td>8</td>
-						<td>Barbecues</td>
-						<td>Athos</td>
-						<td>249.99€</td>
-						<td>Noir</td>
-					</tr>
-					<tr>
-						<td><img src="src/img/11.jpg" alt="Barbecues" title="Barbecues" height="100" ></td>
-						<td>11</td>
-						<td>Barbecues</td>
-						<td>Clatronic</td>
-						<td>135.90€</td>
-						<td>Chrome</td>
-					</tr>
-					<tr>
-						<td><img src="src/img/12.jpg" alt="Barbecues" title="Barbecues" height="100" ></td>
-						<td>12</td>
-						<td>Barbecues</td>
-						<td>Camping</td>
-						<td>88.00€</td>
-						<td>Noir</td>
-					</tr>
-					<tr>
-						<td><img src="src/img/13.jpg" alt="Barbecues" title="Barbecues" height="100" ></td>
-						<td>13</td>
-						<td>Brouette</td>
-						<td>Green</td>
-						<td>49.00€</td>
-						<td>Verte</td>
-					</tr>
-				</tbody>
-			</table>
-		</li>
-		<li class="RightC">
+			<div id="tableau_contain">
+				<table>
+					<thead>
+						<tr>
+								<th>Photo</th>
+								<th>ID</th>
+								<th>Catégorie</th>
+								<th>Libellé</th>
+								<th>Prix</th>
+								<th>Couleur</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><img src="src/img/7.jpg" alt="Barbecues" title="Barbecues" class="image_produit"></td>
+							<td>7</td>
+							<td>Barbecues</td>
+							<td>Aramis</td>
+							<td>110.00€</td>
+							<td>Brun</td>
+						</tr>
+						<tr>
+							<td><img src="src/img/8.jpg" alt="Barbecues" title="Barbecues" class="image_produit"></td>
+							<td>8</td>
+							<td>Barbecues</td>
+							<td>Athos</td>
+							<td>249.99€</td>
+							<td>Noir</td>
+						</tr>
+						<tr>
+							<td><img src="src/img/11.jpg" alt="Barbecues" title="Barbecues" class="image_produit"></td>
+							<td>11</td>
+							<td>Barbecues</td>
+							<td>Clatronic</td>
+							<td>135.90€</td>
+							<td>Chrome</td>
+						</tr>
+						<tr>
+							<td><img src="src/img/12.jpg" alt="Barbecues" title="Barbecues" class="image_produit"></td>
+							<td>12</td>
+							<td>Barbecues</td>
+							<td>Camping</td>
+							<td>88.00€</td>
+							<td>Noir</td>
+						</tr>
+						<tr>
+							<td><img src="src/img/13.jpg" alt="Barbecues" title="Barbecues" class="image_produit"></td>
+							<td>13</td>
+							<td>Brouette</td>
+							<td>Green</td>
+							<td>49.00€</td>
+							<td>Verte</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+		<aside class="RightC">
 			[COLONNE DROITE]
-		<li>	
-	</ul>
+		</aside>	
+	</div>
+	<hr>
 	<!-- Pied de Page-->
 	<footer>
 		<nav class="menu">

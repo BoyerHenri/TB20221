@@ -4,33 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="assets/css/MainStyle.css">
+	<link rel="stylesheet" href="assets/css/styleCorrections.css">
     <title>Contact Jarditou</title>
 </head>
 <body>
+	<header>
 		<!-- Haut de page -->
 		<ul class="Bann-containner">
 			<li class="Bann-Item"><img src="src/img/jarditou_logo.jpg" alt="Logo JARDITOU" title="Logo JARDITOU" height="80"></li>
-			<li class="Bann-Item"><h1>Tout le jardin</h1></li>
+			<li class="Bann-Item" style="text-align:center;"><h2>Tout le jardin</h2></li>
 	    </ul>
 		<nav class="menu">
-			<nav class="menu">
-				<ul class="NavMenu">
-					<li><a href="index.html">Accueil</a></li>
-					<li><a href="tableau.html">Tableau</a></li>
-					<li><a href="formulaire.html">Contact</a></li>
-				</ul>
-			</nav>
+			<ul class="NavMenu">
+				<li><a href="index.html">Accueil</a></li>
+				<li><a href="tableau.html">Tableau</a></li>
+				<li><a href="formulaire.html">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="Promo-containner">
 			<div class="MainBann">
-				<img src="src/img/promotion.jpg" alt="Promotion lames de terrasse" title="Promotion lames de terrasse" >
+			<img src="src/img/promotion.jpg" alt="Promotion lames de terrasse" title="Promotion lames de terrasse">
 			</div>
+		</div>
 	</header>
 	<!-- Contenu -->
-	<ul class="BodyContain">
-		<li class="BodyContain-item">
+	<div class="BodyContain">
+		<section class="BodyContain-item">
 			<h1>Contact</h1>
 			<hr>
-			<form  action="http://bienvu.net/script.php" method="GET">
+			<form  action="http://bienvu.net/script.php" method="POST">
 				* ces zones sont obligatoires
 				<fieldset>
 					<legend>Vos coordonnées</legend>
@@ -51,8 +53,7 @@
 				<br>
 				<br>
 				<fieldset>
-					<legend>Votre demande</legend>
-					<label for="demande"></label>    
+					<legend>Votre demande</legend>   
 					Sujet *
 					<select id="demande">            
 						<option value="Null">Veuillez selectionner un sujet</option>
@@ -63,19 +64,20 @@
 					</select>
 					<br>
 					Votre question *
-					<textarea name="commentaire" rows="10" cols="50"></textarea>
+					<textarea name="commentaire" id="question" rows="10" cols="50"></textarea>
 					<br>
-					<input type="checkbox" name="ok" value="ok" > J'accepte le traitement informatique de ce formulaire. *
+					<label for="validation">J'accepte le traitement informatique de ce formulaire. *</label><input type="checkbox" name="ok" value="ok" id="validation"> 
 				</fieldset>
 				<br>
-				<input type="submit" value="Envoyer"> 
-				<input type="reset" value="Annuler">
+				<input type="submit" name="envoi" value="Envoyer"> 
+				<input type="reset" name="annule" value="Annuler">
 			</form>
-		</li>
-		<li class="RightC">
+		</section>
+		<aside class="RightC">
 			[COLONNE DROITE]
-		<li>
-	</ul>
+		</aside>	
+	</div>
+	<hr>
 		<!-- Pied de Page-->
 		<footer>
 			<nav class="menu">
@@ -86,5 +88,5 @@
 				</ul>
 			</nav>
 		</footer>
-  </body>
+</body>
 </html>
