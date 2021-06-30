@@ -1,0 +1,6 @@
+Ex 15_01
+getElementByID / addEventListener / Form / input (txt & boutton)
+
+Ex 15_02
+Dérivé du précedent : getElementById / addEventListener / Form  input (txt & boutton) / Math.random    |   appliqué au jeu du "Nombre magique"
+			innerHTML (ecrire/recuperer dans une div)					

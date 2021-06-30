@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <p id="button1">Clique-moi</p>
+    <br>
+    <a href="#" id="mouarf" onMouseOver="message();">Azy si tu oses</a>
+
+    <script>
+        
+        /* Couple getElementbyid/addEventListener */
+        var element = document.getElementById("button1");
+        element.addEventListener("click", function() {
+            alert("OK");
+        });
+
+        /* Syntaxe différente, mais même usage avec querySelector*/
+        document.querySelector('#button1').onclick = function() 
+        {
+            alert('Vous avez cliqué !');
+        } 
+
+        /* TEST */
+        document.querySelector('#mouarf').onclick=function()
+        {
+            document.write("<br><p><h1>AZY MANGE TES MORTS</h1> </p>");
+        }
+        function message(){
+            document.write("<br><p><h1>APERO</h1> </p>");
+            window.open("VODKA");
+        }
+    </script>
+  </body>
+</html>

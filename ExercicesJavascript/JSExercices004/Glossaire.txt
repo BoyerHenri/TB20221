@@ -1,0 +1,2 @@
+Exemple.Html
+Form / getElementById / Récupération des valeurs et affichage dans la console

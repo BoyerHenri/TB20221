@@ -1,0 +1,27 @@
+html {
+    font-family: sans-serif;
+  }
+
+  body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 480px;
+    margin: 0 auto;
+  }
+
+.wrapper {
+    display: block;
+    background-color: blue;
+    color: yellow;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.pj_screen {
+    background-color: tomato;
+}
+
