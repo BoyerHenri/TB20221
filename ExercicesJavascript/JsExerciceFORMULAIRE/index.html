@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice formulaire VALIDATION</title>
+    <!-- Intégration CSS -->
+    <link rel="stylesheet" href="styles/MainStyle.css">
+</head>
+<body>
+    <!-- Formulaire-->
+    <form action="http://bienvu.net/script.php" method="POST" onsubmit="return checkForm(this);">
+        <fieldset>
+            <legend><h2>Vos coordonnées :</h2></legend>
+            <h3>* Ces zones sont obligatoires pour envoyer le formulaire.</h3>
+
+            <label for="societe">Société * : </label><input type="text" name="societe" id="societe" required><br><br>
+            <label for="personne_a_contacter">Personne à contacter * : </label><input type="text" name="personne_a_contacter" id="personne_a_contacter" required><br><br>
+            <label for="adresse_entreprise">Adresse de l'entreprise : </label><textarea  name="adresse_entreprise" id="adresse_entreprise" rows="10" cols="50"></textarea><br><br>
+            <label for="code_postal">Code postal * : </label><input type="text" pattern="[0-9]{5}" name="code_postal" id="code_postal" required><br><br>
+            <label for="ville">Ville * : </label><input type="text" name="ville" id="ville" required><br><br>
+            <label for="mail">Email * : </label><input type="text" name="mail" id="mail" required><br><br>
+            <label for="tel">Téléphone : </label><input type="text" pattern="[0-9]{10}" name="tel" id="tel"><br><br>
+            Votre demande
+			<select name="demande" id="demande" onchange="affiche_dmd();">
+				<option selected>Choisissez</option>
+				<option value="Access" >Access</option>
+				<option value="Java">Java</option>
+				<option value="Delphi">Delphi</option>
+				<option value="Windev">Windev</option>
+                <option value="Visual Basic">Visual Basic</option>
+                <option value="Power Builder">Power Builder</option>
+                <option value="Internet">Internet</option>
+                <option value="Intranet">Intranet</option>
+                <option value="Windows NT">Windows NT</option>
+                <option value="Unix">Unix</option>
+                <option value="SQL Server">SQL Server</option>
+                <option value="Oracle">Oracle</option>
+                <option value="Autres..."></option>
+			</select>
+            <label for="demande_complete"></label><textarea  name="demande_complete" id="demande_complete" rows="10" cols="50" placeholder="Votre demande ici..."></textarea><br><br> 
+
+        </fieldset>
+        <!-- Validation ou annulation -->
+        <input type="submit" value="Envoyer">
+        <input type="reset" value="Annuler">
+    </form>
+    <!-- Appel du script-->
+    <script src="scripts/script.js"></script>
+</body>
+</html>

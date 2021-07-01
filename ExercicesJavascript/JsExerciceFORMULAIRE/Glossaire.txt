@@ -1,0 +1,1 @@
+Validation et envoi ou non d'un formulaire selon différentes raisons.
