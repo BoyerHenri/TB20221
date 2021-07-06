@@ -1,0 +1,15 @@
+h1 {
+    color:blue;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-image: url("../medias/fond.png");
+    background-repeat: repeat;
+}
+
+selectzone {
+    display: flex;
+    justify-content: center;
+} 
