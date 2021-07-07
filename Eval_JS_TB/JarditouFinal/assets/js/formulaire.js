@@ -8,18 +8,18 @@ function affiche_dmd(){
  // Validation du formulaire /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/  /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/
 var filtre_nom=new RegExp("^[a-zA-Z]+$");
 var filtre_seske=new RegExp("[Homme|Femme|Inconnu]")
-var birth_d=new RegExp("^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$");// --------------------------------------------------------- REVOIR DATE
+var filtre_birth=new RegExp("^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$");
 var filtre_cp=new RegExp("^[0-9]{5}$");
-//var filtre_question=new RegExp("^[a-zA-Z0-9]$");
-//
+//var filtre_demande=new RegExp("(.|\s)*");
+var validDemand=/^[A-Za-z\W\w]+$/;
 var validMail=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
 
 //
  function check(f){
    // Flag OFF / message d'erreur
    var validage=false;
    var check_prcd=0;
-   var errorText="";
 
    // ------------------------------------------> Verification du nom
    var valeur=f.elements["NOM"].value;
@@ -60,18 +60,20 @@ var validMail=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+
    }
 
    // ------------------------------------------> Verification de la date de naissance
-   /*
    var valeur=f.elements["DATE"].value;
-   var resultat=filtre_nom.test(valeur);
-   alert(DATE);
-   if (check_prcd==0){
-     validage=true;
-   } else if(valeur==NaN) {
-     errorText+="VOTRE DATE DE NAISSANCE\n";
-     validage=false;
-     check_prcd=1;
-   }
-   */
+   var resultat=filtre_birth.test(valeur);
+   //var resultat=valeur.match(validBirth);
+   console.log(resultat+"---"+valeur);
+   if (resultat==true){
+    document.getElementById("birth_no").innerHTML="<br><p style='color:green; text-align:center;'>OK</p>";
+    validage=true;
+    check_prcd++;
+  } else if(resultat==false) {
+    //errorText+="VOTRE EMAIL\n";
+    document.getElementById("birth_no").innerHTML="<br><p style='color:red; text-align:center;'>Entrez votre date de naissance !</p>";
+    validage=false;
+  }
+   
 
    // ------------------------------------------> Verification du code postal
    var valeur=f.elements["ZIPCODE"].value;
@@ -100,33 +102,30 @@ var validMail=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+
    }
 
    //* ------------------------------------------> Verification de la question
-   // var valeur=f.elements["QUESTION"].value;
-   //var resultat=filtre_cp.test(valeur);
-   //var valeur=document.getElementById("Demande").value;
-   //var longchain=valeur.length;
-   //console.log("\n"+"QuestLgth "+valeur.length+"\n");
-   /*
-   if (valeur.lenght()){
-     var okk=255;
-   }
-   if (resultat==true && check_prcd==0){
+   var valeur=f.elements["QUESTION"].value;
+   //var resultat=filtre_demande.test(valeur);
+   var resultat=valeur.match(validDemand);
+   console.log(resultat);
+   //if (resultat==true){
+    if (valeur==resultat){
+     document.getElementById("question_no").innerHTML="<br><p style='color:green; text-align:center;'>OK</p>";
      validage=true;
-   } else if(resultat==false) {
-     errorText+="VOTRE QUESTION\n";
+     check_prcd++;
+   } else if(valeur!=resultat) {
+   //} else if(resultat==false) {
+     //errorText+="VOTRE CODE POSTAL\n";
+     document.getElementById("question_no").innerHTML="<br><p style='color:red; text-align:center;'>Entrez votre QUESTION !</p>";
      validage=false;
-     check_prcd=1;
    }
-   */
+   
 
    //* ------------------------------------------> Check case à cocher
-   //var valeur=f.elements["Accord"].value;
    var valeur=f.Accord.checked;
-   //console.log("\n"+"--- "+valeur+" ---"+"\n");
    console.log("\n"+check_prcd+"\n");
    if (valeur==true){
     document.getElementById("accept_no").innerHTML="<br><p style='color:green; text-align:center;'>OK</p>";    
     console.log("\n Form Ok \n");
-    if (check_prcd==5) {
+    if (check_prcd==7) {
       //return true;
       validage=true;
       return validage;
