@@ -1,0 +1,108 @@
+// 1- Preparation de la requête
+Préparation de la requête :
+On prépare notre requête via la méthode prepare() :
+On utilisera ici des marqueurs nommés sous la forme de :colonne.
+
+$db->prepare("INSERT INTO station (sta_nom,sta_altitude) VALUES (:sta_nom,:sta_altitude)");
+
+Ou bien :
+
+$requete = "INSERT INTO station (sta_nom,sta_altitude) VALUES (:sta_nom,:sta_altitude)";
+$req = $db->prepare($requete);
+
+// 2- Association des valeurs et exécution de la requête
+On associe nos marqueurs nommés à nos valeurs en utilisant bindValue(marqueur, valeur) puis execute()
+
+try {
+$requete = "INSERT INTO station (sta_nom,sta_altitude) VALUES (:sta_nom, :sta_altitude)";
+$req = $db->prepare($requete); //Préparation de la requête 
+
+// Association des valeurs aux paramètres avec BindValue :
+$req->bindValue(:sta_nom, $nom_station);
+$req->bindValue(:sta_altitude, $altitude_station);
+
+$req->execute(); //Exécution de la requête 
+}
+// Gestion des erreurs
+catch (Exception $e) {
+
+    echo "La connexion à la base de données a échoué ! <br>";
+    echo "Merci de bien vérifier vos paramètres de connexion ...<br>";
+    echo "Erreur : " . $e->getMessage() . "<br>";
+    echo "N° : " . $e->getCode();
+    die("Fin du script");
+} 
+
+Si on utilise des marqueurs interrogatifs :
+
+try {
+    $requete = "INSERT INTO station (sta_nom,sta_altitude) VALUES (?,?)";
+    $req = $db->prepare($requete); //Préparation de la requête 
+
+    // Association des valeurs aux paramètres avec BindValue :
+    $req->bindValue(1, $nom_station);
+    $req->bindValue(2, $altitude_station);
+
+    $req->execute(); //Exécution de la requête 
+}
+
+// Gestion des erreurs
+catch (Exception $e) {
+
+        echo "La connexion à la base de données a échoué ! <br>";
+        echo "Merci de bien vérifier vos paramètres de connexion ...<br>";
+        echo "Erreur : " . $e->getMessage() . "<br>";
+        echo "N° : " . $e->getCode();
+        die("Fin du script");
+} 
+
+(ecriture raccourcie :
+L'écriture raccourcie consiste à utiliser directement un tableau pour lier nos marqueurs à nos valeurs, sous la forme :)
+$req->execute(array(
+    marqueur1 => valeur1
+    marqueur2 => valeur2
+    ...
+    ));
+	
+La méthode bindValue sera appellée "automatiquement".
+Exemple avec les marqueurs nommés :
+try {
+
+    $requete = "INSERT INTO station (sta_nom,sta_altitude) VALUES (:sta_nom,:sta_altitude)";
+    $req = $db->prepare($requete); //Préparation de la requête 
+
+    //Exécution de la requête :
+    $req->execute(array(
+
+    ':sta_nom' => $nom_station,
+    ':sta_altitude' => $altitude_station
+));
+}
+
+// Gestion des erreurs
+catch (Exception $e) {
+
+        echo "La connexion à la base de données a échoué ! <br>";
+        echo "Merci de bien vérifier vos paramètres de connexion ...<br>";
+        echo "Erreur : " . $e->getMessage() . "<br>";
+        echo "N° : " . $e->getCode();
+        die("Fin du script");
+}  
+
+Si on utilise des marqueurs interrogatifs :
+try {
+$requete = "INSERT INTO station (sta_nom,sta_altitude) VALUES (?, ?)";
+$req = $db->prepare($requete); //Préparation de la requête 
+
+$req->execute(array($nom_station, $altitude_station)); //Exécution de la requête
+}
+
+// Gestion des erreurs
+catch (Exception $e) {
+
+        echo "La connexion à la base de données a échoué ! <br>";
+        echo "Merci de bien vérifier vos paramètres de connexion ...<br>";
+        echo "Erreur : " . $e->getMessage() . "<br>";
+        echo "N° : " . $e->getCode();
+        die("Fin du script");
+} 
